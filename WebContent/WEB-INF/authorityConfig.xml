@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<authority name="59" comment="测试权">
+		<action>test</action>
+	</authority>
+	<authority name="60" comment="天王权">
+		<action>action2-1</action>
+		<action>action2-2</action>
+		<action>action1-1</action>
+	</authority>
+</root>

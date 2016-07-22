@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">  
+<hibernate-configuration>
+<!--表明以下的配置是针对session-factory配置的，SessionFactory是 Hibernate中的一个类，
+这个类主要负责保存HIbernate的配置信息，以及对Session的操作-->
+<!-- hibernate.dialect 只是Hibernate使用的数据库方言,就是要用Hibernate连接那种类型的数据库服务器 -->
+<session-factory>
+
+<property name="dialect">
+	org.hibernate.dialect.MySQLDialect
+	</property>
+<property name="connection.url">
+	jdbc:mysql://127.0.0.1:3306/htgw
+	</property>
+<property name="connection.username">
+	root
+	</property>
+<property name="connection.password">
+	1234
+	</property>
+<property name="show_sql">
+	true
+	</property>
+<property name="connection.driver_class">
+	com.mysql.jdbc.Driver
+	</property>
+<property name="current_session_context_class">
+	thread
+	</property>
+<mapping class="htgw.authorityManagement.Authority"/>
+<mapping class="htgw.authorityManagement.Role"/>
+<mapping class="htgw.authorityManagement.User"/>
+
+</session-factory>
+</hibernate-configuration>
