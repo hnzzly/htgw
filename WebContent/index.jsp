@@ -16,6 +16,9 @@
 	<s:password name="password" label="密码"/>
 	<s:submit value="登录"/>
 
+
+
+
 </s:form>
 </body>
 </html>
