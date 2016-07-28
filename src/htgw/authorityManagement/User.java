@@ -16,8 +16,8 @@ public class User {
 	private Integer age;
 	private String cellphone;
 	private String password;
-	@ManyToMany(targetEntity=Authority.class,cascade=CascadeType.PERSIST,fetch=FetchType.LAZY)
-	@JoinTable(name="user_authority",joinColumns={@JoinColumn(name="userId",referencedColumnName="userId")},inverseJoinColumns={@JoinColumn(name="authorityId",referencedColumnName="authorityId")})
+	@ManyToMany(targetEntity=Authority.class,mappedBy="users")
+	//@JoinTable(name="user_authority",joinColumns={@JoinColumn(name="userId",referencedColumnName="userId")},inverseJoinColumns={@JoinColumn(name="authorityId",referencedColumnName="authorityId")})
 	private Set<Authority> authorities=new HashSet<>();
 	public Integer getUserId() {
 		return userId;
@@ -49,8 +49,8 @@ public class User {
 	public void setAuthorities(Set<Authority> authorities) {
 		this.authorities = authorities; 
 	}
-	@ManyToMany(targetEntity=Role.class,cascade=CascadeType.PERSIST)
-	@JoinTable(name="user_role",joinColumns={@JoinColumn(name="userId",referencedColumnName="userId")},inverseJoinColumns={@JoinColumn(name="roleId",referencedColumnName="roleId")})
+	@ManyToMany(targetEntity=Role.class,fetch=FetchType.LAZY,mappedBy="users" )
+	//@JoinTable(name="user_role",joinColumns={@JoinColumn(name="userId",referencedColumnName="userId")},inverseJoinColumns={@JoinColumn(name="roleId",referencedColumnName="roleId")})
 	private Set<Role> roles=new HashSet<>();
 	public Set<Role> getRoles() {
 		return roles;

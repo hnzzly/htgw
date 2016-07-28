@@ -3,6 +3,10 @@
 	<authority name="59" comment="测试权">
 		<action>test</action>
 	</authority>
+	<authority name="55" comment="编辑用户资料">
+		<action>userEdit</action>
+		<action>updateUser</action>
+	</authority>
 	<authority name="60" comment="天王权">
 		<action>action2-1</action>
 		<action>action2-2</action>

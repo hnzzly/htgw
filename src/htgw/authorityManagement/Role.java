@@ -11,7 +11,7 @@ public class Role {
 	@Column(name="roleId")
 	private Integer roleId;
 	private String name;
-	@ManyToMany(targetEntity=Authority.class,cascade=CascadeType.PERSIST)
+	@ManyToMany(targetEntity=Authority.class)
 	@JoinTable(name="role_authority",joinColumns={@JoinColumn(name="roleId",referencedColumnName="roleId")},inverseJoinColumns={@JoinColumn(name="authorityId",referencedColumnName="authorityId")})
 	private Set<Authority> authorities=new HashSet<>();
 	public Integer getRoleId() {
@@ -31,6 +31,15 @@ public class Role {
 	}
 	public void setAuthorities(Set<Authority> authorities) {
 		this.authorities = authorities;
+	}
+	@ManyToMany(targetEntity=User.class)
+	@JoinTable(name="user_role",joinColumns={@JoinColumn(name="roleId",referencedColumnName="roleId")},inverseJoinColumns={@JoinColumn(name="userId",referencedColumnName="userId")})
+	private Set<User> users=new HashSet<>();
+	public Set<User> getUsers() {
+		return users;
+	}
+	public void setUsers(Set<User> users) {
+		this.users = users;
 	}
 	
 }

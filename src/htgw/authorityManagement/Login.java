@@ -1,13 +1,12 @@
 package htgw.authorityManagement;
 
-import java.util.Iterator;
+
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+
 import org.hibernate.Transaction;
-import org.hibernate.boot.SessionFactoryBuilder;
-import org.hibernate.cfg.Configuration;
+
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;

@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>欢腾购物频道MARS信息系统</title>
 </head>
 <body>
-<h1>${tip}</h1>
+<h1>欢腾购物频道MARS信息系统</h1>
+<h3 style="color:red">${tip}</h3>
 </body>
 </html>
