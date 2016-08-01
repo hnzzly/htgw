@@ -26,10 +26,17 @@
    			<result name="success">WEB-INF/content/testsuccess.jsp</result>
    		</action>
    		
-   		<action name="userEdit" class="htgw.useredit.UserEdit">
+   		<action name="userEdit" class="htgw.users.UserEdit">
    			<result name="showUser">WEB-INF/content/useredit.jsp</result>
    		</action>
-   		<action name="updateUser" class="htgw.useredit.UpdateUser">
+   		<action name="updateUser" class="htgw.users.UpdateUser">
+   			<result name="success">WEB-INF/content/success.jsp</result>
+   			<result name="error">WEB-INF/content/error.jsp</result>
+   		</action>
+   		<action name="preAddUser" class="htgw.users.AddUser" method="preAdd">
+   			<result name="addUser">WEB-INF/content/addUser.jsp</result>
+   		</action>
+   		<action name="addUser" class="htgw.users.AddUser" method="add">
    			<result name="success">WEB-INF/content/success.jsp</result>
    			<result name="error">WEB-INF/content/error.jsp</result>
    		</action>

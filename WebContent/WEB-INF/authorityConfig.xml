@@ -7,6 +7,10 @@
 		<action>userEdit</action>
 		<action>updateUser</action>
 	</authority>
+	<authority name="56" comment="用户管理">
+		<action>preAddUser</action>
+		<action>addUser</action>
+	</authority>
 	<authority name="60" comment="天王权">
 		<action>action2-1</action>
 		<action>action2-2</action>
