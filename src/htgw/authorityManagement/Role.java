@@ -3,6 +3,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 @Entity()
 @Table(name="role",catalog="htgw")
 public class Role {
@@ -13,6 +16,7 @@ public class Role {
 	private String name;
 	@ManyToMany(targetEntity=Authority.class)
 	@JoinTable(name="role_authority",joinColumns={@JoinColumn(name="roleId",referencedColumnName="roleId")},inverseJoinColumns={@JoinColumn(name="authorityId",referencedColumnName="authorityId")})
+	@NotFound(action=NotFoundAction.IGNORE) 
 	private Set<Authority> authorities=new HashSet<>();
 	public Integer getRoleId() {
 		return roleId;
@@ -34,6 +38,7 @@ public class Role {
 	}
 	@ManyToMany(targetEntity=User.class)
 	@JoinTable(name="user_role",joinColumns={@JoinColumn(name="roleId",referencedColumnName="roleId")},inverseJoinColumns={@JoinColumn(name="userId",referencedColumnName="userId")})
+	@NotFound(action=NotFoundAction.IGNORE) 
 	private Set<User> users=new HashSet<>();
 	public Set<User> getUsers() {
 		return users;

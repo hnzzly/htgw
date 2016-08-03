@@ -1,7 +1,10 @@
 package htgw.authorityManagement;
 
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.EntityNotFoundException;
 
 import org.hibernate.Session;
 
@@ -13,7 +16,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class Login extends ActionSupport{
 	private String userName="";
-	private String password;
+	private String password="";
 	public String execute() throws Exception {
 		ActionContext act=ActionContext.getContext();	
 		
@@ -23,8 +26,13 @@ public class Login extends ActionSupport{
 			String hqlStatement="from User where name=:userName and password=:password";
 			Session session=HibernateUtil.getSession();
 			Transaction transaction=session.beginTransaction();
-			List users= session.createQuery(hqlStatement).setParameter("userName", userName).setParameter("password",password).getResultList();
-			transaction.commit();		
+			List users;
+			
+				users= session.createQuery(hqlStatement).setParameter("userName", userName).setParameter("password",password).getResultList();
+				transaction.commit();
+			
+			
+					
 			if (users.isEmpty()){
 				act.put("tip", "对不起，您的用户名或密码错误！");
 				return "loginError";
